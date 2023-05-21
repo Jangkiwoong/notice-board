@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="/webapp/css.css">
+
+</head>
+<body>
+<div class="board_wrap">
+    <div class="board_title">
+        <strong>PASP</strong>
+        <p>빠르고 정확하게 안내해드립니다.</p>
+    </div>
+    <div class="board_view_wrap">
+        <div class="board_view">
+            <div class="title"><h1 th:text="${board.Title}">
+                글 제목이 들어갑니다.
+            </h1>
+            </div>
+            <div class="info">
+                <dl>
+                    <dt th:text="${board.ID}">번호</dt>
+
+                </dl>
+                <dl>
+                    <dt>작성자</dt>
+                    <dd th:text="${board.Writer}">김이름</dd>
+                </dl>
+            </div>
+
+            <div class="cont"><p th:text="${board.Content}">
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다<br>
+                글 내용이 들어갑니다
+            </p>
+            </div>
+        </div>
+        <div class="bt_wrap">
+
+            <a th:href="@{/demo/modify/{id}(id = ${board.ID})}">수정</a>
+            <a th:href="@{/demo/delete(id=${board.ID})}">삭제</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
